@@ -8,13 +8,23 @@ const chatInput = document.querySelector(".chatting-input");
 const sendButton = document.querySelector(".send-button");
 const displayContainer = document.querySelector(".display-container");
 
-sendButton.addEventListener("click", () => {
+chatInput.addEventListener("keypress", (event) => {
+  console.log("나알==", event, "e===");
+  if (event.code === "Enter") {
+    send();
+  }
+});
+
+function send() {
   const param = {
     name: nickname.value,
     msg: chatInput.value,
   };
   socket.emit("chatting", param);
-});
+  chatInput.value = "";
+}
+
+sendButton.addEventListener("click", send);
 
 // socket.emit("chatting", "from front");
 // socket.emit()의 첫번째 인자는 채팅명과 같다.

@@ -6,6 +6,7 @@
 > moment 시간 관련 라이브러리
 > npm i nodemon
 > // 파일의 변경된 내용이 있을 때마다 서버를 재시작하여 준다.
-
-1. app.js 파일 생성
-2. src 폴더 생성
+> npm i -g ngrok
+> //내 컴퓨터의 외부 사람들이 접속할 수 있도록 해주는 라이브러이이다.
+> // ngrok http [내가 공개하려는 port]
+> // ex ) ngrok http 3000

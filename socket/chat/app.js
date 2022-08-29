@@ -35,6 +35,11 @@ io.on("connection", (socket) => {
 });
 // connection을 연결이 이루어지면, 해당 연결에 대한 요청값을 socket에 담아 전달한다.
 
+app.use(function (req, res, next) {
+  res.header("ngrok-skip-browser-warning", "*");
+  next();
+});
+
 server.listen(PORT, (e) => {
   if (e) console.log(e);
   console.log(
